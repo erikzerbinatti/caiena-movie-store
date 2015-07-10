@@ -1,0 +1,6 @@
+<div id="show">
+  <h2 class="name"><%= @actor.name%></h2>
+  <h2 class="movie"><%= @actor.movie.name if @actor.movie%></h2>
+  <%= link_to 'Edit', actor_path(@actor) %> |
+  <%= link_to 'Back', actors_path %>
+</div>

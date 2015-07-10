@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150708021236) do
+ActiveRecord::Schema.define(version: 20150708125430) do
+
+  create_table "actors", force: :cascade do |t|
+    t.string  "name"
+    t.integer "movie_id"
+  end
+
+  add_index "actors", ["movie_id"], name: "index_actors_on_movie_id"
 
   create_table "movies", force: :cascade do |t|
     t.string   "name"

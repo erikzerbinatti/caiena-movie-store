@@ -1,0 +1,17 @@
+<%= form_for(@actor) do |f| %>
+ 
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :movie_id %><br>
+    <%= 
+      f.collection_select(:movie_id, @movies, :id, :name)
+    %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to 'Back', actors_path %>
+  </div>
+<% end %>
